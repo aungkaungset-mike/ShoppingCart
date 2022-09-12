@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\AdminController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +13,7 @@ use App\Http\Controllers\ClientController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/admin', [AdminController::class, 'admin']);
 
 Route::get('/', [ClientController::class, 'home']);
 
