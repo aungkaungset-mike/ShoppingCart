@@ -4,15 +4,14 @@
 
 // Accent Variant
 @mixin accent-variant($name, $color) {
-  $link-color: $color;
   .accent-#{$name} {
+    $link-color: $color;
     $link-hover-color: darken($color, 15%);
     $pagination-active-bg: $color;
     $pagination-active-border-color: $color;
 
     .btn-link,
-    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.btn),
-    .nav-tabs .nav-link {
+    a:not(.dropdown-item):not(.btn-app):not(.nav-link):not(.brand-link):not(.page-link):not(.btn) {
       color: $link-color;
 
       @include hover () {
@@ -91,14 +90,5 @@
       }
     }
   }
-  .dark-mode.accent-#{$name} {
-    .page-item {
-      .page-link {
-        &:hover,
-        &:focus {
-          color: lighten($link-color, 5%);
-        }
-      }
-    }
-  }
 }
+

@@ -102,7 +102,7 @@ Old sample entry (with tree menu)
   <div class="col-md-6" markdown="1">
 New sample entry (with tree menu)
 ```html
-<li class="nav-item">
+<li class="nav-item has-treeview">
   <a href="#" class="nav-link">
     <i class="nav-icon fas fa-tachometer-alt"></i>
     <p>

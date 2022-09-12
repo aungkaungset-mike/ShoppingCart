@@ -11,6 +11,7 @@ The layout consists of four major parts:
 
 - Wrapper `.wrapper`. A div that wraps the whole site.
 - Main Header `.main-header`. Contains the logo and navbar.
+- Sidebar `.sidebar-wrapper`. Contains the user panel and sidebar menu.
 - Content `.content-wrapper`. Contains the page header and content.
 
 #### Layout Options
@@ -20,7 +21,7 @@ The layout consists of four major parts:
 > You cannot use both layout-boxed and layout-navbar-fixed or layout-footer-fixed at the same time. Anything else can be mixed together.
 {: .quote-danger}
 
-AdminLTE 3.1 provides a set of options to apply to your main layout. Each one of these classes can be added to the body tag to get the desired goal.
+AdminLTE 3.0 provides a set of options to apply to your main layout. Each one of these classes can be added to the body tag to get the desired goal.
 
 - Fixed Sidebar: use the class `.layout-fixed` to get a fixed sidebar.
 - Fixed Navbar: use the class `.layout-navbar-fixed` to get a fixed navbar.
@@ -48,33 +49,9 @@ You can also use the following classes for responsive changes with placing
 {: .quote-info}
 
 
-#### Preloader
-
-Preloader to avoid [https://github.com/ColorlibHQ/AdminLTE/discussions/3319](https://github.com/ColorlibHQ/AdminLTE/discussions/3319)
-
-```html
-<div class="wrapper">
-  <!-- Preloader -->
-  <div class="preloader">
-    <img src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
-  </div>
-</div>
-```
-
-- Preloader elements should be added inside `.wrapper` element.
-- You can replace image OR modify size OR include any preload items inside `.preloader` element.
-
-
-#### Dark Mode
-
-AdminLTE 3.1 provides a dark mode option. You can add in body tag:
-
-- `.dark-mode`
-
-
 #### Color Variations
 
-AdminLTE 3.1 provides a set of color variations to apply to your sidebar (light & dark) & navbar. You can combine any available color with these class prefixes:
+AdminLTE 3.0 provides a set of color variations to apply to your sidebar (light & dark) & navbar. You can combine any available color with these class prefixes:
 
 - `.navbar-*`
 - `.sidebar-dark-*`
@@ -87,10 +64,6 @@ AdminLTE 3.1 provides a set of color variations to apply to your sidebar (light 
 
 > ###### Info
 > You can combine `.navbar-*` with `.navbar-light` or `.navbar-dark`.
-{: .quote-info}
-
-> ###### Recommended for Dark Mode
-> You must use only `.navbar-dark` without only combination.
 {: .quote-info}
 
 The following colors are available:
@@ -138,16 +111,6 @@ The following colors are available:
 
 
 ##### Custom Range / Switch
-
-For custom colored custom-checkbox & custom-radio you can add this classes:
-
-- `.custom-control-input-*`
-
-You can also change the look to outlined checkbox & radio with adding the `.custom-control-input-outline` on the custom control input.
-
-For custom colored custom-range you can add this classes:
-
-- `.custom-range-*`
 
 For custom colored custom-range you can add this classes:
 

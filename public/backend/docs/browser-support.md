@@ -18,8 +18,9 @@ You can find our supported range of browsers and their versions in [our .browser
 >= 0.2%
 last 2 major versions
 not dead
-Firefox ESR
-Edge >= 16
+Chrome >= 45
+Firefox >= 38
+Edge >= 15
 Explorer >= 10
 iOS >= 9
 Safari >= 9

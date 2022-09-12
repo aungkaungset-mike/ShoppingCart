@@ -40,9 +40,6 @@
   &.fas,
   &.far,
   &.fab,
-  &.fal,
-  &.fad,
-  &.svg-inline--fa,
   &.ion {
     line-height: $input-height;
   }
@@ -54,9 +51,6 @@
   &.fas,
   &.far,
   &.fab,
-  &.fal,
-  &.fad,
-  &.svg-inline--fa,
   &.ion {
     line-height: $input-height-lg;
   }
@@ -68,9 +62,6 @@
     &.fas,
     &.far,
     &.fab,
-    &.fal,
-    &.fad,
-    &.svg-inline--fa,
     &.ion {
       line-height: $input-height-lg;
     }
@@ -83,9 +74,6 @@
   &.fas,
   &.far,
   &.fab,
-  &.fal,
-  &.fad,
-  &.svg-inline--fa,
   &.ion {
     line-height: $input-height-sm;
   }
@@ -97,9 +85,6 @@
     &.fas,
     &.far,
     &.fab,
-    &.fal,
-    &.fad,
-    &.svg-inline--fa,
     &.ion {
       line-height: $input-height-sm;
     }
@@ -264,32 +249,6 @@ textarea.form-control {
   }
 }
 
-// body.text-sm support
-body.text-sm {
-  .input-group-text {
-    font-size: $font-size-sm;
-  }
-}
-
-// custom .form-control styles
-.form-control,
-.custom-select {
-  &.form-control-border {
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
-    border-radius: 0;
-    box-shadow: inherit;
-
-    &.border-width-2 {
-      border-bottom-width: 2px;
-    }
-    &.border-width-3 {
-      border-bottom-width: 3px;
-    }
-  }
-}
-
 // custom switch color variations
 .custom-switch {
   @each $name, $color in $theme-colors {
@@ -309,123 +268,5 @@ body.text-sm {
 
   @each $name, $color in $colors {
     @include custom-range-variant($name, $color);
-  }
-}
-
-// custom control input variations
-@each $name, $color in $theme-colors {
-  @include custom-control-input-variant($name, $color);
-}
-
-@each $name, $color in $colors {
-  @include custom-control-input-variant($name, $color);
-}
-
-.custom-control-input-outline {
-  ~ .custom-control-label::before {
-    background-color: transparent !important;
-    box-shadow: none;
-  }
-  &:checked ~ .custom-control-label::before {
-    @include gradient-bg(transparent);
-  }
-}
-
-.navbar-dark {
-  .btn-navbar,
-  .form-control-navbar {
-    background-color: lighten($sidebar-dark-bg, 5%);
-    border: 1px solid lighten($sidebar-dark-bg, 15%);
-    color: lighten(color-yiq(lighten($sidebar-dark-bg, 5%)), 15%);
-  }
-  .btn-navbar {
-    &:hover {
-      background-color: lighten($sidebar-dark-bg, 7.5%);
-    }
-    &:focus {
-      background-color: lighten($sidebar-dark-bg, 10%);
-    }
-  }
-
-  .form-control-navbar + .input-group-prepend,
-  .form-control-navbar + .input-group-append {
-    > .btn-navbar {
-      background-color: lighten($sidebar-dark-bg, 5%);
-      color: $white;
-      border: 1px solid lighten($sidebar-dark-bg, 15%);
-      border-left: none;
-    }
-  }
-}
-
-.dark-mode {
-  .form-control:not(.form-control-navbar):not(.form-control-sidebar),
-  .custom-select,
-  .custom-file-label,
-  .custom-file-label::after,
-  .custom-control-label::before,
-  .input-group-text {
-    background-color: $dark;
-    color: $white;
-  }
-  .form-control:not(.form-control-navbar):not(.form-control-sidebar):not(.is-invalid):not(:focus),
-  .custom-file-label,
-  .custom-file-label::after {
-    border-color: $gray-600;
-  }
-  select {
-    background-color: $dark;
-    color: $white;
-    border-color: $gray-600;
-  }
-
-  .input-group-text {
-    border-color: $gray-600;
-  }
-
-  .custom-control-input:disabled ~ .custom-control-label::before,
-  .custom-control-input[disabled] ~ .custom-control-label::before {
-    background-color: lighten($dark, 5%);
-    border-color: $gray-600;
-    color: $white;
-  }
-
-  .custom-range {
-    &::-webkit-slider-runnable-track {
-      background-color: lighten($dark, 7.5%);
-    }
-    &::-moz-range-track {
-      background-color: lighten($dark, 7.5%);
-    }
-    &::-ms-track {
-      background-color: lighten($dark, 7.5%);
-    }
-
-    @each $name, $color in $theme-colors-alt {
-      @include custom-range-variant($name, $color);
-    }
-
-    @each $name, $color in $colors-alt {
-      @include custom-range-variant($name, $color);
-    }
-  }
-
-  // custom switch color variations
-  .custom-switch {
-    @each $name, $color in $theme-colors-alt {
-      @include custom-switch-variant($name, $color);
-    }
-
-    @each $name, $color in $colors-alt {
-      @include custom-switch-variant($name, $color);
-    }
-  }
-
-  @each $name, $color in $theme-colors-alt {
-    @include custom-control-input-variant($name, $color);
-  }
-
-  @each $name, $color in $colors-alt {
-    @include custom-control-input-variant($name, $color);
   }
 }

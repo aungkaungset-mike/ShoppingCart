@@ -36,7 +36,8 @@ const Default = {
   loadOnInit: true,
   responseType: '',
   overlayTemplate: '<div class="overlay"><i class="fas fa-2x fa-sync-alt fa-spin"></i></div>',
-  onLoadStart() {},
+  onLoadStart() {
+  },
   onLoadDone(response) {
     return response
   }
@@ -111,7 +112,7 @@ class CardRefresh {
       $(this).data(DATA_KEY, typeof config === 'string' ? data : config)
     }
 
-    if (typeof config === 'string' && /load/.test(config)) {
+    if (typeof config === 'string' && config.match(/load/)) {
       data[config]()
     } else {
       data._init($(this))

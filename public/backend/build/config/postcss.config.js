@@ -1,17 +1,14 @@
 'use strict'
 
-module.exports = {
+module.exports = () => ({
   map: {
     inline: false,
     annotation: true,
     sourcesContent: true
   },
-  plugins: [
-    require('postcss-scrollbar')({
-      edgeAutohide: true
-    }),
-    require('autoprefixer')({
+  plugins: {
+    autoprefixer: {
       cascade: false
-    })
-  ]
-}
+    }
+  }
+})
