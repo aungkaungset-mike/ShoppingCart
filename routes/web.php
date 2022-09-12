@@ -23,6 +23,8 @@ Route::get('/checkout', [ClientController::class, 'checkout']);
 
 Route::get('/login', [ClientController::class, 'login']);
 
+Route::get('/signup', [ClientController::class, 'signup']);
+
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth'])->name('dashboard');

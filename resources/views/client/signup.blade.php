@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login</title>
+	<title>Sign Up</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -32,15 +32,14 @@
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('frontend/login/images/bg-01.jpg');">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form"> 					
                     <a href="{{url('/')}}">
                         <span class="login100-form-logo">                       
                             <i class="zmdi zmdi-landscape"></i>
                         </span>
                     </a>
-
 					<span class="login100-form-title p-b-34 p-t-27">
-						Log in
+						Sign Up
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
@@ -55,13 +54,13 @@
 
 					<div class="container-login100-form-btn">
 						<button class="login100-form-btn">
-							Login
+							Register
 						</button>
 					</div>
 
 					<div class="text-center p-t-90">
-						<a class="txt1" href="{{url('/signup')}}">
-							Don't have an account? Sign up
+						<a class="txt1" href="{{url('/login')}}">
+							Already have an account? Log in
 						</a>
 					</div>
 				</form>
