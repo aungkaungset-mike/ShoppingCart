@@ -15,6 +15,14 @@ use App\Http\Controllers\ClientController;
 
 Route::get('/', [ClientController::class, 'home']);
 
+Route::get('/shop', [ClientController::class, 'shop']);
+
+Route::get('/cart', [ClientController::class, 'cart']);
+
+Route::get('/checkout', [ClientController::class, 'checkout']);
+
+Route::get('/login', [ClientController::class, 'login']);
+
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth'])->name('dashboard');
