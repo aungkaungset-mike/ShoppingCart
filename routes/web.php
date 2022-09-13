@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SliderController;
+use App\Http\Controllers\ProductController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +26,10 @@ Route::get('/addslider', [SliderController::class, 'addslider']);
 
 Route::get('/sliders', [SliderController::class, 'sliders']);
 
+Route::get('/addproduct', [ProductController::class, 'addproduct']);
+
+Route::get('/products', [ProductController::class, 'products']);
+
 
 
 
@@ -38,6 +44,8 @@ Route::get('/checkout', [ClientController::class, 'checkout']);
 Route::get('/login', [ClientController::class, 'login']);
 
 Route::get('/signup', [ClientController::class, 'signup']);
+
+Route::get('/orders', [ClientController::class, 'orders']);
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
