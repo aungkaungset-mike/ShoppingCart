@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\SliderController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,6 +15,17 @@ use App\Http\Controllers\AdminController;
 |
 */
 Route::get('/admin', [AdminController::class, 'admin']);
+
+Route::get('/addcategory', [CategoryController::class, 'addcategory']);
+
+Route::get('/categories', [CategoryController::class, 'categories']);
+
+Route::get('/addslider', [SliderController::class, 'addslider']);
+
+Route::get('/sliders', [SliderController::class, 'sliders']);
+
+
+
 
 Route::get('/', [ClientController::class, 'home']);
 
