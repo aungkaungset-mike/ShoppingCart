@@ -13,5 +13,9 @@ class CategoryController extends Controller
     public function categories(){
         return view('admin.categories');
     }
+
+    public function savecategory(Request $request){
+        return view('admin.categories');
+    }
     
 }

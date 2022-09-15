@@ -35,11 +35,14 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form>
+              {{-- <form> --}}
+                {!!Form::open(['action' => 'App\Http\Controllers\CategoryController@savecategory', 'method' => 'POST'])!!}
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="exampleInputEmail1">Category name</label>
-                    <input type="text" name="category_name" class="form-control" id="exampleInputEmail1" placeholder="Enter category">
+                    {{Form::label('', 'Category name', ['for' => 'exampleInputEmail1' ])}}
+                    {{Form::text('category_name', '',  ['placeholder' => 'Enter Category','class' => 'form-control', 'id'=> 'exampleInputEmail1' ])}}
+                    {{-- <label for="exampleInputEmail1">Category name</label>
+                    <input type="text" name="category_name" class="form-control" id="exampleInputEmail1" placeholder="Enter category"> --}}
                   </div>
                 </div>
                 <!-- /.card-body -->
@@ -47,7 +50,8 @@
                   <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
                   <input type="submit" class="btn btn-primary" value="Save" >
                 </div>
-              </form>
+                {!!Form::close()!!}
+              {{-- </form> --}}
             </div>
             <!-- /.card -->
             </div>
