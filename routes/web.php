@@ -24,8 +24,9 @@ Route::post('/savecategory', [CategoryController::class, 'savecategory']);
 
 Route::get('/categories', [CategoryController::class, 'categories']);
 
+Route::get('/editcategory/{id}', [CategoryController::class, 'editcategory']);
 
-
+Route::post('/updatecategory', [CategoryController::class, 'updatecategory']);
 
 
 Route::get('/addslider', [SliderController::class, 'addslider']);

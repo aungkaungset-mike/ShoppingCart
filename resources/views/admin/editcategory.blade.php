@@ -52,11 +52,12 @@
               <!-- /.card-header -->
               <!-- form start -->
               {{-- <form> --}}
-                {!!Form::open(['action' => 'App\Http\Controllers\CategoryController@savecategory', 'method' => 'POST'])!!}
+                {!!Form::open(['action' => 'App\Http\Controllers\CategoryController@updatecategory', 'method' => 'POST'])!!}
                 <div class="card-body">
                   <div class="form-group">
+                    {{From::hidden('id', $category->id)}}
                     {{Form::label('', 'Category name', ['for' => 'exampleInputEmail1' ])}}
-                    {{Form::text('category_name', '',  ['placeholder' => 'Enter Category','class' => 'form-control', 'id'=> 'exampleInputEmail1' ])}}
+                    {{Form::text('category_name', $category->category_name ,  ['placeholder' => 'Enter Category','class' => 'form-control', 'id'=> 'exampleInputEmail1' ])}}
                     {{-- <label for="exampleInputEmail1">Category name</label>
                     <input type="text" name="category_name" class="form-control" id="exampleInputEmail1" placeholder="Enter category"> --}}
                   </div>
@@ -65,7 +66,7 @@
                 <div class="card-footer">
                   <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
                   {{-- <input type="submit" class="btn btn-primary" value="Save" > --}}
-                  {!!Form::submit('Save', ['class' => 'btn btn-primary'])!!}
+                  {!!Form::submit('Update', ['class' => 'btn btn-primary'])!!}
                 </div>
                 {!!Form::close()!!}
               {{-- </form> --}}
@@ -90,10 +91,10 @@
 
   @section('scripts')
 <!-- jquery-validation -->
-    <script src="backend/plugins/jquery-validation/jquery.validate.min.js"></script>
-    <script src="backend/plugins/jquery-validation/additional-methods.min.js"></script>
+    <script src="{{asset('backend/plugins/jquery-validation/jquery.validate.min.js')}}"></script>
+    <script src="{{asset('backend/plugins/jquery-validation/additional-methods.min.js')}}"></script>
 <!-- AdminLTE App -->
-    <script src="backend/dist/js/adminlte.min.js"></script>
+    <script src="{{asset('backend/dist/js/adminlte.min.js')}}"></script>
 
     <script>
         $(function () {

@@ -2,7 +2,7 @@
 
 
 @section('content')
- 
+  {{Form::hidden('', $increment = 1)}}
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -42,26 +42,20 @@
                   </tr>
                   </thead>
                   <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>Internet
-                      Explorer 4.0
+                  
+                    @foreach ($categories as $category)
+                    <tr>
+                      <td>{{$increment}}</td>
+                    <td>{{$category->category_name}}
                     </td>
                     <td>
-                      <a href="#" class="btn btn-primary"><i class="nav-icon fas fa-edit"></i></a>
+                      <a href="{{url('/editcategory/'.$category->id)}}" class="btn btn-primary"><i class="nav-icon fas fa-edit"></i></a>
                       <a href="#" id="delete" class="btn btn-danger" ><i class="nav-icon fas fa-trash"></i></a>
                     </td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Internet
-                      Explorer 5.0
-                    </td>
-                    <td>
-                      <a href="#" class="btn btn-primary"><i class="nav-icon fas fa-edit"></i></a>
-                      <a href="#" id="delete" class="btn btn-danger" ><i class="nav-icon fas fa-trash"></i></a>
-                    </td>
-                  </tr>
+                  </tr>     
+                  {{Form::hidden('', $increment = $increment + 1)}}
+                    @endforeach
+                                  
                   </tbody>
                   <tfoot>
                   <tr>
