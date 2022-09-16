@@ -79,6 +79,12 @@ Route::get('/shop', [ClientController::class, 'shop']);
 
 Route::get('/cart', [ClientController::class, 'cart']);
 
+Route::get('/addToCart/{id}', [ClientController::class, 'addToCart']);
+
+Route::post('/update_qty/{id}', [ClientController::class, 'update_qty']);
+
+Route::get('/remove_from_cart/{id}', [ClientController::class, 'remove_from_cart']);
+
 Route::get('/checkout', [ClientController::class, 'checkout']);
 
 Route::get('/login', [ClientController::class, 'login']);
