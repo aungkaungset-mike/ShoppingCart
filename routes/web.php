@@ -68,7 +68,7 @@ Route::get('/activateproduct/{id}', [ProductController::class, 'activateproduct'
 
 Route::get('/unactivateproduct/{id}', [ProductController::class, 'unactivateproduct']);
 
-
+Route::get('/viewproductbycategory/{category_name}', [ProductController::class, 'viewproductbycategory']);
 
 
 
