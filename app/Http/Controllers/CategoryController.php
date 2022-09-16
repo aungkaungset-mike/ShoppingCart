@@ -14,7 +14,7 @@ class CategoryController extends Controller
     public function categories(){
         $categories = Category::All();
 
-        return view('admin.categories')->with('categories', $categories);;
+        return view('admin.categories')->with('categories', $categories);
     }
 
     public function savecategory(Request $request){
@@ -34,7 +34,22 @@ class CategoryController extends Controller
     }
 
     public function updatecategory(Request $request){
-       
+        $this->validate($request, ['category_name'=>'required']);
+
+        $category = Category::find($request->input('id'));
+
+        $category->category_name = $request->input('category_name');
+
+        $category->update();
+
+        return redirect('/categories')->with('status', 'Category has been updated!');       
     }
     
+    public function deletecategory($id){
+        $category = Category::find($id);
+         
+        $category->delete();
+
+        return back()->with('status', 'Category has been deleted!'); 
+    }
 }

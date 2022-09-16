@@ -53,6 +53,7 @@
               <!-- form start -->
               {{-- <form> --}}
                 {!!Form::open(['action' => 'App\Http\Controllers\CategoryController@savecategory', 'method' => 'POST'])!!}
+                {{ csrf_field() }}
                 <div class="card-body">
                   <div class="form-group">
                     {{Form::label('', 'Category name', ['for' => 'exampleInputEmail1' ])}}

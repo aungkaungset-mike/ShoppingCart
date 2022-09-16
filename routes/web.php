@@ -28,14 +28,33 @@ Route::get('/editcategory/{id}', [CategoryController::class, 'editcategory']);
 
 Route::post('/updatecategory', [CategoryController::class, 'updatecategory']);
 
+Route::get('/deletecategory/{id}', [CategoryController::class, 'deletecategory']);
+
+
 
 Route::get('/addslider', [SliderController::class, 'addslider']);
 
 Route::get('/sliders', [SliderController::class, 'sliders']);
 
+
+
 Route::get('/addproduct', [ProductController::class, 'addproduct']);
 
 Route::get('/products', [ProductController::class, 'products']);
+
+Route::post('/saveproduct', [ProductController::class, 'saveproduct']);
+
+Route::get('/editproduct/{id}', [ProductController::class, 'editproduct']);
+
+Route::post('/updateproduct', [ProductController::class, 'updateproduct']);
+
+Route::get('/deleteproduct/{id}', [ProductController::class, 'deleteproduct']);
+
+Route::get('/activateproduct/{id}', [ProductController::class, 'activateproduct']);
+
+Route::get('/unactivateproduct/{id}', [ProductController::class, 'unactivateproduct']);
+
+
 
 
 

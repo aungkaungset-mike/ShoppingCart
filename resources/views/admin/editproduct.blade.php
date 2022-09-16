@@ -3,19 +3,19 @@
 
 @section('content')
  
- <!-- Content Wrapper. Contains page content -->
- <div class="content-wrapper">
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Category</h1>
+            <h1>Product</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Category</li>
+              <li class="breadcrumb-item active">Product</li>
             </ol>
           </div>
         </div>
@@ -29,9 +29,9 @@
           <!-- left column -->
           <div class="col-md-12">
             <!-- jquery validation -->
-            <div class="card card-primary">
+            <div class="card card-success">
               <div class="card-header">
-                <h3 class="card-title">Add category</small></h3>
+                <h3 class="card-title">Edit product</h3>
               </div>
 
               @if (Session::has('status'))
@@ -51,22 +51,51 @@
               @endif
               <!-- /.card-header -->
               <!-- form start -->
-              {{-- <form> --}}
-                {!!Form::open(['action' => 'App\Http\Controllers\CategoryController@updatecategory', 'method' => 'POST'])!!}
+              {{-- <form id="quickForm"> --}}
+                {!!Form::open(['action' => 'App\Http\Controllers\ProductController@updateproduct', 'method' => 'POST' , 'enctype' => 'multipart/form-data'])!!}
+                {{ csrf_field() }}
                 <div class="card-body">
                   <div class="form-group">
-                    {{Form::hidden('id', $category->id)}}
-                    {{Form::label('', 'Category name', ['for' => 'exampleInputEmail1' ])}}
-                    {{Form::text('category_name', $category->category_name ,  ['placeholder' => 'Enter Category','class' => 'form-control', 'id'=> 'exampleInputEmail1' ])}}
-                    {{-- <label for="exampleInputEmail1">Category name</label>
-                    <input type="text" name="category_name" class="form-control" id="exampleInputEmail1" placeholder="Enter category"> --}}
+                    {{-- <label for="exampleInputEmail1">Product name</label>
+                    <input type="text" name="product_name" class="form-control" id="exampleInputEmail1" placeholder="Enter product name"> --}}
+                    {{Form::hidden('id', $product->id)}}
+                    {{Form::label('', 'Product name', ['for' => 'exampleInputEmail1' ])}}
+                    {{Form::text('product_name', $product->product_name,  ['placeholder' => 'Enter product name','class' => 'form-control', 'id'=> 'exampleInputEmail1' ])}}
+                  </div>
+                  <div class="form-group">
+                    {{-- <label for="exampleInputEmail1">Product price</label>
+                    <input type="number" name="product_price" class="form-control" id="exampleInputEmail1" placeholder="Enter product price" min="1"> --}}
+                    {{Form::label('', 'Product price', ['for' => 'exampleInputEmail1' ])}}
+                    {{Form::text('product_price', $product->product_price,  ['placeholder' => 'Enter product price','class' => 'form-control', 'id'=> 'exampleInputEmail1' ])}}
+                  </div>
+                  <div class="form-group">
+                    <label>Product category</label>
+                    {{-- <select class="form-control select2" style="width: 100%;">
+                      <option selected="selected">Select</option>
+                      @foreach ($categories as $category)
+                      <option>{{$category->category_name}}</option>
+                      @endforeach                     
+                    </select> --}}
+                    {{Form::select('product_category', $categories , $product->product_category,  ['class' => 'form-control select2'])}}
+                  </div>
+                  <label for="exampleInputFile">Product image</label>
+                  <div class="input-group">
+                    <div class="custom-file">
+                      {{-- <input type="file" class="custom-file-input" id="exampleInputFile">
+                      <label class="custom-file-label" for="exampleInputFile">Choose file</label> --}}
+                    {{Form::label('', 'Choose file', ['class' => 'custom-file-label', 'for' => 'exampleInputFile' ])}}
+                    {{Form::file('product_image',  ['class' => 'custom-file-input', 'id'=> 'exampleInputFile' ])}}
+                    </div>
+                    <div class="input-group-append">
+                      <span class="input-group-text">Upload</span>
+                    </div>
                   </div>
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
-                  {{-- <input type="submit" class="btn btn-primary" value="Save" > --}}
-                  {!!Form::submit('Update', ['class' => 'btn btn-primary'])!!}
+                  <!-- <button type="submit" class="btn btn-success">Submit</button> -->
+                  {{-- <input type="submit" class="btn btn-success" value="Save"> --}}
+                  {!!Form::submit('Update', ['class' => 'btn btn-success'])!!}
                 </div>
                 {!!Form::close()!!}
               {{-- </form> --}}
@@ -91,10 +120,10 @@
 
   @section('scripts')
 <!-- jquery-validation -->
-    <script src="{{asset('backend/plugins/jquery-validation/jquery.validate.min.js')}}"></script>
-    <script src="{{asset('backend/plugins/jquery-validation/additional-methods.min.js')}}"></script>
+    <script src="backend/plugins/jquery-validation/jquery.validate.min.js"></script>
+    <script src="backend/plugins/jquery-validation/additional-methods.min.js"></script>
 <!-- AdminLTE App -->
-    <script src="{{asset('backend/dist/js/adminlte.min.js')}}"></script>
+    <script src="backend/dist/js/adminlte.min.js"></script>
 
     <script>
         $(function () {
