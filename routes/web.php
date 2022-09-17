@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SliderController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\PdfController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -100,6 +101,13 @@ Route::post('/accessaccount', [ClientController::class, 'accessaccount']);
 Route::get('/logout', [ClientController::class, 'logout']);
 
 Route::post('/postcheckout', [ClientController::class, 'postcheckout']);
+
+
+
+
+Route::get('/viewpdforder/{id}', [PdfController::class, 'view_pdf']);
+
+
 
 
 

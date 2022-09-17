@@ -30,6 +30,12 @@
               <div class="card-header">
                 <h3 class="card-title">All Ordes</h3>
               </div>
+
+              @if (Session::has('error'))
+                <div class="alert alert-danger">
+                 {{Session::get('error')}} 
+                </div>
+              @endif
               <!-- /.card-header -->
               <div class="card-body">
                 <table id="example1" class="table table-bordered table-striped">
@@ -55,7 +61,7 @@
                       {{-- {{$order->cart}} --}}
                     </td>
                     <td>
-                      <a href="#" class="btn btn-primary"><i class="nav-icon fas fa-eye"></i></a>
+                      <a href="{{url('/viewpdforder/' . $order->id)}}" class="btn btn-primary"><i class="nav-icon fas fa-eye"></i></a>
                     </td>
                   </tr>
                     @endforeach
