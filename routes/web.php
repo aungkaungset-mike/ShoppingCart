@@ -93,6 +93,16 @@ Route::get('/signup', [ClientController::class, 'signup']);
 
 Route::get('/orders', [ClientController::class, 'orders']);
 
+Route::post('/createaccount', [ClientController::class, 'createaccount']);
+
+Route::post('/accessaccount', [ClientController::class, 'accessaccount']);
+
+Route::get('/logout', [ClientController::class, 'logout']);
+
+Route::post('/postcheckout', [ClientController::class, 'postcheckout']);
+
+
+
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth'])->name('dashboard');

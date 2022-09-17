@@ -42,26 +42,29 @@
                   </tr>
                   </thead>
                   <tbody>
-                  <tr>
-                    <td>2020</td>
-                    <td>Win 95+</td>
-                    <td> 4</td>
+
+                    @foreach ($orders as $order)
+                       <tr>
+                    <td>{{$order->created_at}}</td>
+                    <td>{{$order->address}}</td>
+                    <td>{{$order->name}}</td>
+                    <td>
+                      @foreach($order->cart->items as $item)
+                          {{$item['product_name'].' ,'}}
+                      @endforeach
+                      {{-- {{$order->cart}} --}}
+                    </td>
                     <td>
                       <a href="#" class="btn btn-primary"><i class="nav-icon fas fa-eye"></i></a>
                     </td>
                   </tr>
-                  <tr>
-                    <td>2020</td>
-                    <td>Win 95+</td>
-                    <td>5</td>
-                    <td>
-                      <a href="#" class="btn btn-primary"><i class="nav-icon fas fa-eye"></i></a>
-                    </td>
-                  </tr>
+                    @endforeach
+                 
                   </tbody>
                   <tfoot>
                   <tr>
                     <th>Date</th>
+                    <th>Address</th>
                     <th>Client Names</th>
                     <th>Orders</th>
                     <th>Actions</th>

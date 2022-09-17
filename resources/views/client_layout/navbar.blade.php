@@ -41,7 +41,11 @@
         </li> --}}
           <li class="nav-item active"><a href="{{url('/shop')}}" class="nav-link">Shop</a></li>
           <li class="nav-item cta cta-colored"><a href="{{url('/cart')}}" class="nav-link"><span class="icon-shopping_cart"></span>[{{Session::has('cart') ? Session::get('cart')->totalQty : 0}}]</a></li>
-          <li class="nav-item active"><a href="{{url('/login')}}" class="nav-link"><span class="fa fa-user"></span>Login</a></li>
+          @if (Session::has('client'))
+            <li class="nav-item active"><a href="{{url('/logout')}}" class="nav-link"><span class="fa fa-user"></span>Logout</a></li>
+          @else
+            <li class="nav-item active"><a href="{{url('/login')}}" class="nav-link"><span class="fa fa-user"></span>Login</a></li>
+          @endif
         </ul>
       </div>
     </div>

@@ -62,6 +62,12 @@
 						        <td class="total">{{$product['qty'] * $product['product_price']}}</td>
 						      </tr><!-- END TR-->
 									@endforeach
+									@else
+									@if (Session::has('status'))
+									<div class="alert alert-danger">
+									  {{Session::get('status')}}
+									</div>
+									@endif
 								@endif
 						      		     
 						    </tbody>
